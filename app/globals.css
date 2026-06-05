@@ -1,0 +1,67 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --slate-900: #0F172A;
+  --slate-800: #1E293B;
+  --slate-500: #64748B;
+  --slate-400: #94A3B8;
+  --slate-300: #CBD5E1;
+  --slate-200: #E2E8F0;
+  --slate-100: #F1F5F9;
+
+  --violet-600: #7C3AED;
+  --violet-100: #EDE9FE;
+
+  --rose-500: #F43F5E;
+  --lime-300: #BEF264;
+  
+  --amber-800: #92400E;
+
+  --body-background: var(--slate-100);
+
+  --header-background: var(--background);
+  --header-border-bottom: var(--slate-200);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #171717;
+    --foreground: #ffffff;
+
+    --body-background: var(--slate-900);
+    
+    --header-background: var(--slate-800);
+    --header-border-bottom: var(--slate-500);
+  }
+}
+
+* {
+  word-break: keep-all;
+}
+
+body {
+  background: var(--body-background);
+  color: var(--foreground);
+  font-family: 'NanumSquare', Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  max-width: 1248px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 24px;  
+  @media screen and (max-width: 640px) {
+    padding-inline: 16px;
+  }
+}

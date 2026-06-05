@@ -1,0 +1,36 @@
+{
+  "name": "codeit-assignment-test",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minguru/codeit_assignment_task_todolist.git"
+  },
+  "homepage": "https://github.com/minguru/codeit_assignment_task_todolist#readme",
+  "bugs": {
+    "url": "https://github.com/minguru/codeit_assignment_task_todolist/issues"
+  },
+  "author": "Mingyu Park <aldrb0306@gmail.com>",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.2.7",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.7",
+    "sass": "^1.100.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
