@@ -155,7 +155,9 @@ export default function TodoItemDetail({
           <div className={`
             image w-full md:h-auto min-h-[311px] max-h-100 md:w-5/12 relative rounded-3xl overflow-hidden flex justify-center items-center box-border 
 
-            ${ preview === null ? `border-dashed border-2 border-[var(--slate-300)] bg-[var(--slate-100)] dark:bg-[var(--slate-400)]` : `bg-[var(--slate-500)]`}
+            ${ preview === null ? 
+              `border-dashed border-2 border-[var(--slate-300)] bg-[var(--slate-100)] dark:bg-[var(--slate-400)]` : `bg-[var(--slate-500)]
+            `}
           `}>
             {
               preview === null ?
@@ -163,9 +165,7 @@ export default function TodoItemDetail({
                 src="/images/image-not-found.png" 
                 srcSet="/images/image-not-found.png 1x, /images/image-not-found@2x.png 2x, /images/image-not-found@3x.png 3x" 
                 alt="업로드 된 이미지가 없음을 나타내는 임시 이미지" 
-                className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]" 
-                onLoadStart={() => {setLoading(true)}}
-                onLoad={() => {setLoading(false)}}
+                className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
               /> 
               : 
               <img 

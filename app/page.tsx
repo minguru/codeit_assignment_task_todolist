@@ -10,7 +10,7 @@ interface getTodos {
 }
 
 export default async function Home() {
-  const response: Response = await fetch(`${API_URL}/items`)
+  const response = await fetch(`${API_URL}/items`)
   const data: getTodos[] = await response.json()
 
   return (
