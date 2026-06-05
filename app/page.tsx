@@ -1,23 +1,11 @@
 import Header from '@/app/components/global/Header'
-import TodoPusher from '@/app/todo/TodoPusher'
-import TodoList from '@/app/todo/TodoList'
-import { API_URL } from '@/app/constants'
+import Todo from './todo'
 
-interface getTodos {
-  id: number,
-  name: string,
-  isCompleted: boolean
-}
-
-export default async function Home() {
-  const response = await fetch(`${API_URL}/items`)
-  const data: getTodos[] = await response.json()
-
+export default function Home() {
   return (
     <>
       <Header />
-      <TodoPusher data={data} apiUrl={API_URL} />
-      <TodoList data={data} apiUrl={API_URL} />
+      <Todo />
     </>
   )
 }
