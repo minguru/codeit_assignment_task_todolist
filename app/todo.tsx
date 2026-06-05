@@ -9,7 +9,9 @@ interface getTodos {
 }
 
 export default async function Todo() {
-  const response = await fetch(`${API_URL}/items`)
+  const response = await fetch(`${API_URL}/items`, {
+    'cache': 'no-store'
+  })
   const data: getTodos[] = await response.json()
 
   return (

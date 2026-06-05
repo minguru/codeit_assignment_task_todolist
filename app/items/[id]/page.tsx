@@ -20,7 +20,9 @@ export default async function ItemDetail({
 }) {
   const { id } = await params
   
-  const response = await fetch(`${API_URL}/items/${id}`)
+  const response = await fetch(`${API_URL}/items/${id}`, {
+    'cache': 'no-store'
+  })
   const data: getTodoDetail = await response.json()
 
   return (
