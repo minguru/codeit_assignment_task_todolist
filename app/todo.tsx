@@ -1,6 +1,7 @@
 import TodoPusher from '@/app/todo/TodoPusher'
 import TodoList from '@/app/todo/TodoList'
-import { API_URL } from '@/app/constants'
+import { apiUrl } from '@/app/constants'
+import { cookies } from "next/headers"
 
 interface getTodos {
   id: number,
@@ -9,15 +10,16 @@ interface getTodos {
 }
 
 export default async function Todo() {
-  const response = await fetch(`${API_URL}/items`, {
+  const tenantId = (await cookies()).get('codeit_tenant_id')?.value
+
+  const response = await fetch(`${apiUrl(tenantId)}/items`, {
     'cache': 'no-store'
   })
   const data: getTodos[] = await response.json()
-
   return (
     <>
-      <TodoPusher data={data} apiUrl={API_URL} />
-      <TodoList data={data} apiUrl={API_URL} />
+      <TodoPusher data={data} apiUrl={apiUrl(tenantId)} />
+      <TodoList data={data} apiUrl={apiUrl(tenantId)} />
     </>
   )
 }
